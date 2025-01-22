@@ -159,16 +159,17 @@ class ReservationController extends Controller
 
     // Voir mes reservations
     public function myReservations()
-    {
-        // Récupérer les reservations de l'utilisateur connecté
-        $reservations = auth()->user()->reservations()->get();
+{
+    // Récupérer les réservations de l'utilisateur connecté avec les informations de l'installation
+    $reservations = auth()->user()->reservations()->with('installation')->get();
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Mes reservations.',
-            'data' => $reservations,
-        ], 200);
-    }
+    return response()->json([
+        'status' => true,
+        'message' => 'Mes réservations avec les installations.',
+        'data' => $reservations,
+    ], 200);
+}
+
 
     // Lister toutes les reservations
     public function reservations()
