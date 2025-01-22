@@ -16,9 +16,9 @@ Route::get('/installations/disponibles', [InstallationController::class, 'getAva
 
 Route::middleware('auth')->group(function () {
     Route::post('/installations/{id}', [InstallationController::class, 'update']);
-    Route::put('/installations/{id}/disponible', [InstallationController::class, 'setDisponible']);
-    Route::put('/installations/{id}/indisponible', [InstallationController::class, 'setIndisponible']);
     Route::apiResource('/installations', InstallationController::class)->only('index', 'store', 'destroy');
+    Route::put('/installations/{id}/disponibilite', [InstallationController::class, 'setDisponibilite']);
+
 });
 
 // Reservation

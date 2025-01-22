@@ -12,10 +12,8 @@ Ce projet est une API Laravel conçue dans le cadre du hackathon Jeemacoder. Ell
 - **Gestion des Installations** :
   - Récupérer les installations disponibles (`GET /installations/disponibles`)
   - Mettre à jour une installation (`PUT /installations/{id}`)
-  - Définir une installation comme disponible (`PUT /installations/{id}/disponible`)
-  - Définir une installation comme indisponible (`PUT /installations/{id}/indisponible`)
+  - Mettre a jour l'etat de la disponiblite des installations (`PUT /installations/{id}/disponible`)
   - Récupérer l'ensemble des installations (`GET /installations`)
-  - Modifier une installation (`POST /installations/{id}`)
   - Supprimer une installation (`DELETE /installations/{id}`)
 
 - **Gestion des Réservations** :

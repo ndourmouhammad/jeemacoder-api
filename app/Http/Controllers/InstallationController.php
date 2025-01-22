@@ -62,38 +62,7 @@ class InstallationController extends Controller
         return $this->customJsonResponse("Installation supprimée avec succès : ", $installation);
     }
 
-    /**
-     * Marquer une installation comme disponible.
-     */
-    public function setDisponible($id)
-    {
-        $installation = Installation::find($id);
-        if (!$installation) {
-            return $this->customJsonResponse("Installation non trouvée", null, 404);
-        }
-
-        $installation->disponible = true;
-        $installation->save();
-
-        return $this->customJsonResponse("L'installation est maintenant disponible.", $installation);
-    }
-
-    /**
-     * Marquer une installation comme non disponible.
-     */
-    public function setIndisponible($id)
-    {
-        $installation = Installation::find($id);
-        if (!$installation) {
-            return $this->customJsonResponse("Installation non trouvée", null, 404);
-        }
-
-        $installation->disponible = false;
-        $installation->save();
-
-        return $this->customJsonResponse("L'installation est maintenant indisponible.", $installation);
-    }
-
+    
     /**
      * Lister uniquement les installations disponibles.
      */
@@ -107,4 +76,27 @@ class InstallationController extends Controller
             'data' => $installations
         ], 200);
     }
+
+    public function setDisponibilite(Request $request, $id)
+{
+    $status = $request->input('status');
+    if (!is_bool($status)) {
+        return $this->customJsonResponse("Le statut doit être un booléen.", null, 400);
+    }
+
+    $installation = Installation::find($id);
+    if (!$installation) {
+        return $this->customJsonResponse("Installation non trouvée", null, 404);
+    }
+
+    $installation->disponible = $status;
+    $installation->save();
+
+    $message = $status
+        ? "L'installation est maintenant disponible."
+        : "L'installation est maintenant indisponible.";
+
+    return $this->customJsonResponse($message, $installation);
+}
+
 }
