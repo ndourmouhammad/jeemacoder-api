@@ -174,7 +174,7 @@ class ReservationController extends Controller
     // Lister toutes les reservations
     public function reservations()
     {
-        $reservations = Reservation::all();
+        $reservations = Reservation::with('installation', 'user')->get();;
 
         return response()->json([
             'status' => true,
