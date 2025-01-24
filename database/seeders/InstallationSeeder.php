@@ -19,7 +19,7 @@ class InstallationSeeder extends Seeder
             'description' => 'Une salle spacieuse pour les amateurs de musculation.',
             'disponible' => true,
             'prix_par_heure' => 5000,
-            'image' => 'https://img.freepik.com/photos-gratuite/femme-s-entrainant-pour-halterophilie-dans-salle-sport_23-2149278073.jpg?t=st=1737391252~exp=1737394852~hmac=e825ae78d1500c84bc1675aac8dfd8cedd17e7f0584910bb05e08252ba0ed244&w=1380',
+            'image' => 'https://i.pinimg.com/1200x/2c/95/04/2c950449e232b0b256b4df6dab6ea961.jpg',
         ]);
 
         Installation::create([
@@ -28,7 +28,7 @@ class InstallationSeeder extends Seeder
             'description' => 'Un terrain adapté pour le football et le basket-ball.',
             'disponible' => true,
             'prix_par_heure' => 3000,
-            'image' => 'https://img.freepik.com/photos-gratuite/homme-afro-jouant-au-basketball-terrain_23-2148264677.jpg?t=st=1737391373~exp=1737394973~hmac=c545331804bbe7dcf12130d28cd7eaf1c8b6ac7ecbbbf29f097451dfb9ba8fcc&w=1380',
+            'image' => 'https://i.pinimg.com/1200x/d7/e4/13/d7e4130df004fd3c31f1af903db8f245.jpg',
         ]);
 
         Installation::create([
@@ -37,7 +37,7 @@ class InstallationSeeder extends Seeder
             'description' => 'Un terrain spacieux pour les amateurs de tennis.',
             'disponible' => false,
             'prix_par_heure' => 2000,
-            'image' => 'https://img.freepik.com/photos-gratuite/court-tennis-rendu-3d-illustration_654080-1384.jpg?t=st=1737391617~exp=1737395217~hmac=bf99a7ec55cf5939cba71fb851fa2de03dcae204f04dd1236903399f5f921422&w=1480',
+            'image' => 'https://i.pinimg.com/1200x/2c/df/a6/2cdfa6a80448e1cf824de78ce19c6171.jpg',
         ]);
     }
 }
